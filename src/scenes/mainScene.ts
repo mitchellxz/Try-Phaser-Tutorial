@@ -109,6 +109,10 @@ export default class MainScene extends Phaser.Scene {
             this
         );
 
+        this.player.setInteractive();
+        this.player.on("pointerdown", () => {
+            this.scene.start("AnotherScene");
+        });
         /*const message = `Phaser v${Phaser.VERSION}`;
         this.add
             .text(this.cameras.main.width - 15, 15, message, {
